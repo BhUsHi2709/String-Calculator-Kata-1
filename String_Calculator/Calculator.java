@@ -16,6 +16,8 @@ public class Calculator {
             for (String i : nums) {
                 if (Integer.parseInt(i) < 0) {
                     negatives.add(Integer.parseInt(i));
+                } else if (Integer.parseInt(i) > 1000) {
+                    sum = sum + 0;
                 } else {
                     sum = sum + Integer.parseInt(i);
                 }

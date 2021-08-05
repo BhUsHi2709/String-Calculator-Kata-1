@@ -44,4 +44,9 @@ public class TestCases {
         }
     }
 
+    @Test
+    public void numbersGreaterThan1000ShouldBeIgnored() {
+        assertEquals(3, Calculator.Add("1,1500,2"));
+    }
+
 }
