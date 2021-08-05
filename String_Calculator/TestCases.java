@@ -19,4 +19,10 @@ public class TestCases {
     public void sumOfTwoArguments() {
         assertEquals(3, Calculator.Add("1,2"));
     }
+
+    @Test
+    public void sumOfMultipleArguments() {
+        assertEquals(6, Calculator.Add("1,2,3"));
+    }
+
 }
