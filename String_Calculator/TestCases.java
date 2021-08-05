@@ -1,6 +1,7 @@
 package String_Calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.*;
 
@@ -28,6 +29,11 @@ public class TestCases {
     @Test
     public void acceptNewLineAsDelimiter() {
         assertEquals(6, Calculator.Add("1\n2,3"));
+    }
+
+    @Test
+    public void shouldAcceptCustomDelimiters() {
+        assertEquals(3, Calculator.Add("//;\n1;2"));
     }
 
 }
