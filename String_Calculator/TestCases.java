@@ -25,4 +25,9 @@ public class TestCases {
         assertEquals(6, Calculator.Add("1,2,3"));
     }
 
+    @Test
+    public void acceptNewLineAsDelimiter() {
+        assertEquals(6, Calculator.Add("1\n2,3"));
+    }
+
 }
