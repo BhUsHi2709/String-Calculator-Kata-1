@@ -1,7 +1,6 @@
 package String_Calculator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.*;
 
@@ -34,6 +33,15 @@ public class TestCases {
     @Test
     public void shouldAcceptCustomDelimiters() {
         assertEquals(3, Calculator.Add("//;\n1;2"));
+    }
+
+    @Test
+    public void exceptionOnNegativeInput() {
+        try {
+            Calculator.Add("-1,-2,3");
+        } catch (RuntimeException ex) {
+            assertEquals("Negatives Not Allowed:[-1, -2]", ex.getMessage());
+        }
     }
 
 }

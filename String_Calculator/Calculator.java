@@ -1,5 +1,7 @@
 package String_Calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,10 +12,19 @@ public class Calculator {
         } else {
             String nums[] = tokenize(numbers);
             int sum = 0;
+            List<Integer> negatives = new ArrayList<Integer>();
             for (String i : nums) {
-                sum = sum + Integer.parseInt(i);
+                if (Integer.parseInt(i) < 0) {
+                    negatives.add(Integer.parseInt(i));
+                } else {
+                    sum = sum + Integer.parseInt(i);
+                }
             }
-            return sum;
+            if (negatives.size() > 0) {
+                throw new RuntimeException("Negatives Not Allowed:" + negatives);
+            } else {
+                return sum;
+            }
         }
     }
 
